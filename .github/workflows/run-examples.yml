@@ -24,6 +24,9 @@ jobs:
         run: npm ci
 
       - name: Install Playwright
+        run: npx playwright install --with-deps
+
+      - name: Run Playwright tests
         run: npx playwright test tests/example.spec.ts tests/demo-todo-app.spec.ts
 
       - uses: actions/upload-artifact@v4
