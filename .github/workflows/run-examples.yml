@@ -13,9 +13,12 @@ jobs:
 
     steps:
       - name: Check out project
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+        uses: actions/checkout@v3
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 21
 
       - name: Clean install the project
         run: npm ci
